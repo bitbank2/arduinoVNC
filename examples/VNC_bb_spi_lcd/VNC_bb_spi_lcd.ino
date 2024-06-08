@@ -19,12 +19,12 @@
 #include <VNC_bb_spi_lcd.h>
 #include <VNC.h>
 
-const char * vnc_ip = "192.168.10.200";
+const char * vnc_ip = "192.168.1.1";
 const uint16_t vnc_port = 5900;
-const char * vnc_pass = "larryvnc";
+const char * vnc_pass = "yourpass";
 
-const char* ssid = "MEO-B970C0-2G&5G";
-const char* password = "19b59e2bf7";
+const char* ssid = "your_ssid";
+const char* password = "your_pw";
 
 BB_SPI_LCD_VNC tft = BB_SPI_LCD_VNC(DISPLAY_WT32_SC01_PLUS);
 arduinoVNC vnc = arduinoVNC(&tft);
