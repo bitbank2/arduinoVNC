@@ -1,9 +1,9 @@
 /*
- * @file VNC_ILI9341.h
- * @date 12.05.2015
- * @author Markus Sattler
+ * @file VNC_bb_spi_lcd.h
+ * @date June 8, 2024
+ * @author Larry Bank
  *
- * Copyright (c) 2015 Markus Sattler. All rights reserved.
+ * Copyright (c) 2024 Larry Bank. All rights reserved.
  * This file is part of the VNC client for Arduino.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -24,21 +24,18 @@
  *
  */
 
-#ifndef VNC_ILI9341_H_
-#define VNC_ILI9341_H_
+#ifndef VNC_BB_SPI_LCD_H_
+#define VNC_BB_SPI_LCD_H_
 
 #include "VNC_config.h"
 
-#ifdef VNC_ILI9341
-
-#include <Adafruit_ILI9341.h>
-#include "VNC_ILI9341.h"
+#include <bb_spi_lcd.h>
 #include "VNC.h"
 
-class ILI9341VNC: public VNCdisplay, public Adafruit_ILI9341 {
+class BB_SPI_LCD_VNC: public VNCdisplay {
     public:
-        ILI9341VNC(int8_t _CS, int8_t _DC, int8_t _RST);
-
+        BB_SPI_LCD_VNC(int iDisplayName);
+        BB_SPI_LCD lcd;
         bool hasCopyRect(void);
 
         uint32_t getHeight(void);
@@ -57,9 +54,6 @@ class ILI9341VNC: public VNCdisplay, public Adafruit_ILI9341 {
 
     private:
         uint32_t area_x, area_y, area_w, area_h;
-
 };
 
-#endif
-
-#endif /* MARKUS_VNC_ILI9341_H_ */
+#endif /* VNC_BB_SPI_LCD_H_ */
